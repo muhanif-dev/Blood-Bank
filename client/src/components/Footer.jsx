@@ -32,7 +32,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-[0.75rem] font-inter text-on-surface-variant text-center">
-            © {new Date().getFullYear()} Muhammad Hanif By CodeMinds. Community Lifesaver Network.
+            © {new Date().getFullYear()} <span className="font-semibold">CodeMinds.</span> Designed by <span className="font-semibold">Muhammad Hanif</span>.
           </p>
         </div>
 
