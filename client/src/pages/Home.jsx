@@ -405,16 +405,17 @@ const Home = () => {
                     <h3 className="font-plus-jakarta font-bold text-[0.875rem] text-on-surface truncate">
                       {name}
                     </h3>
+                     {qualification && (
+                      <p className="font-inter text-[0.75rem] text-on-surface-variant">
+                        {qualification}
+                      </p>
+                    )}
                     <p
                       className={`font-inter text-[0.75rem] mt-0.5 ${featured ? "text-primary font-semibold" : "text-on-surface-variant"}`}
                     >
                       {role}
                     </p>
-                    {qualification && (
-                      <p className="font-inter text-[0.75rem] text-on-surface-variant">
-                        {qualification}
-                      </p>
-                    )}
+                   
                   </div>
                 </div>
               </div>
