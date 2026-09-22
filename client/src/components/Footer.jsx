@@ -25,9 +25,9 @@ const Footer = () => {
             <Link to="/search" className="text-[0.875rem] font-inter text-on-surface-variant hover:text-on-surface transition-colors">
               Find Donor
             </Link>
-            {/* <Link to="/register" className="text-[0.875rem] font-inter text-on-surface-variant hover:text-on-surface transition-colors">
+            <Link to="/register" className="text-[0.875rem] font-inter text-on-surface-variant hover:text-on-surface transition-colors">
               Register
-            </Link> */}
+            </Link>
           </nav>
 
           {/* Copyright */}
