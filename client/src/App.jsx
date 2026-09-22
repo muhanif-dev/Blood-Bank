@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SearchDonors from './pages/SearchDonors';
-// import RegisterDonor from './pages/RegisterDonor';
+import RegisterDonor from './pages/RegisterDonor';
 import DonorDetails from './pages/DonorDetails';
 
 function App() {
