@@ -25,14 +25,14 @@ const Footer = () => {
             <Link to="/search" className="text-[0.875rem] font-inter text-on-surface-variant hover:text-on-surface transition-colors">
               Find Donor
             </Link>
-            <Link to="/register" className="text-[0.875rem] font-inter text-on-surface-variant hover:text-on-surface transition-colors">
+            {/* <Link to="/register" className="text-[0.875rem] font-inter text-on-surface-variant hover:text-on-surface transition-colors">
               Register
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Copyright */}
           <p className="text-[0.75rem] font-inter text-on-surface-variant text-center">
-            © {new Date().getFullYear()} Blood Bank Connect. Community Lifesaver Network.
+            © {new Date().getFullYear()} Muhammad Hanif By CodeMinds. Community Lifesaver Network.
           </p>
         </div>
 
