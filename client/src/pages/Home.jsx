@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full">
       {/* ── Urgent Alert Banner ─────────────────────────────────────── */}
-      {/* <aside className="w-full bg-error-container text-on-error-container py-2 px-4 rounded-xl shadow-sm mb-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <aside className="w-full bg-error-container text-on-error-container py-2 px-4 rounded-xl shadow-sm mb-6 flex flex-col md:flex-row items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="flex h-3 w-3 relative flex-shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75" />
@@ -53,7 +53,7 @@ const Home = () => {
           <span>Become a Donor</span>
           <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
         </button>
-      </aside> */}
+      </aside>
 
       {/* ── Hero Section + Integrated Search Widget ─────────────────── */}
       <section className="w-full relative rounded-xl bg-white p-4 md:p-8 shadow-sm mb-8 overflow-hidden border border-outline-variant/20">
@@ -170,14 +170,14 @@ const Home = () => {
                     </span>
                     Find Donors Instantly
                   </button>
-                  {/* <button
+                  <button
                     type="button"
                     onClick={() => navigate('/register')}
                     className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 h-11 px-4 bg-white hover:bg-surface-container text-on-surface font-plus-jakarta font-semibold text-[0.875rem] rounded-lg shadow-sm transition-colors border border-outline-variant/30"
                   >
                     <span className="material-symbols-outlined text-[18px] text-primary">person_add</span>
                     Join Registry
-                  </button> */}
+                  </button>
                 </div>
               </div>
             </form>
@@ -351,13 +351,13 @@ const Home = () => {
               Registration takes less than 2 minutes.
             </p>
           </div>
-          {/* <button
+          <button
             onClick={() => navigate('/register')}
             className="relative z-10 flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-xl font-plus-jakarta font-bold text-[0.875rem] hover:bg-surface-container-low transition-colors shadow-lg active:scale-95"
           >
             <span className="material-symbols-outlined text-[20px]">person_add</span>
             Register as a Donor
-          </button> */}
+          </button>
         </div>
       </section>
 
@@ -378,15 +378,15 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { name: "Dr. Bilal Qureshi", role: "HOD", featured: true },
-              { name: "Mr. Abdullah Khan", role: "Instructor", featured: true },
-              { name: "Muhammad Hanif", role: "Team Member" },
-              { name: "Muhammad Bilal", role: "Team Member" },
-              { name: "Muhammad Rehan", role: "Team Member" },
-              { name: "Muhammad Fawad", role: "Team Member" },
-              { name: "Muhammad Tauheed", role: "Team Member" },
-              { name: "Mujtaba", role: "Team Member" },
-            ].map(({ name, role, featured }) => (
+              { name: "Dr. Bilal Qureshi", role: "Director", featured: true },
+              { name: "Mr. Abdullah Khan", role: "Mentor", featured: true },
+              { name: "Muhammad Hanif", role: "Team Member", qualification: "BSCS, 5th Semester" },
+              { name: "Muhammad Bilal", role: "Team Member", qualification: "BSCS, 5th Semester" },
+              { name: "Muhammad Rehan", role: "Team Member", qualification: "BSCS, 5th Semester" },
+              { name: "Muhammad Fawad", role: "Team Member", qualification: "BSCS, 5th Semester" },
+              { name: "Muhammad Tauheed", role: "Team Member", qualification: "BSCS, 5th Semester" },
+              { name: "Mujtaba", role: "Team Member", qualification: "BSCS, 5th Semester" },
+            ].map(({ name, role, featured, qualification }) => (
               <div
                 key={name}
                 className={`rounded-xl p-4 border ${
@@ -410,6 +410,11 @@ const Home = () => {
                     >
                       {role}
                     </p>
+                    {qualification && (
+                      <p className="font-inter text-[0.75rem] text-on-surface-variant">
+                        {qualification}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

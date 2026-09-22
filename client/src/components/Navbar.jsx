@@ -48,7 +48,7 @@ const Navbar = () => {
           >
             Find a Donor
           </NavLink>
-          {/* <NavLink
+          <NavLink
             to="/register"
             className={({ isActive }) =>
               `px-4 py-2 text-[0.875rem] font-plus-jakarta font-semibold rounded-lg transition-colors ${
@@ -59,18 +59,18 @@ const Navbar = () => {
             }
           >
             Register as Donor
-          </NavLink> */}
+          </NavLink>
         </nav>
 
         {/* Right side: Emergency badge + avatar */}
         <div className="flex items-center gap-3 flex-shrink-0">
-          {/* <Link
+          <Link
             to="/register"
             className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-error-container text-on-error-container text-[0.75rem] font-plus-jakarta font-semibold border border-error/20 hover:bg-error hover:text-white transition-colors"
           >
             <span className="material-symbols-outlined text-[16px] animate-pulse text-error">emergency</span>
             <span>Become a Donor</span>
-          </Link> */}
+          </Link>
           <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm">
             <span className="material-symbols-outlined text-white text-[18px]">person</span>
           </div>
