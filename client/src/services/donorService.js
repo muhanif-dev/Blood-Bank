@@ -1,19 +1,21 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const BASE_URL = import.meta.env.VITE_API_URL || "/api";
 
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
-  headers: { 'Content-Type': 'application/json' },
+  headers: { "Content-Type": "application/json" },
 });
 
 // User-friendly error message extractor
 const getErrorMessage = (error) => {
   if (error.response?.data?.message) return error.response.data.message;
-  if (error.message === 'Network Error') return 'Unable to connect to the server. Please check your connection.';
-  if (error.code === 'ECONNABORTED') return 'Request timed out. Please try again.';
-  return 'Something went wrong. Please try again.';
+  if (error.message === "Network Error")
+    return "Unable to connect to the server. Please check your connection.";
+  if (error.code === "ECONNABORTED")
+    return "Request timed out. Please try again.";
+  return "Something went wrong. Please try again.";
 };
 
 const donorService = {
@@ -25,9 +27,11 @@ const donorService = {
     try {
       // Remove empty string params to keep URL clean
       const cleanParams = Object.fromEntries(
-        Object.entries(params).filter(([, v]) => v !== '' && v !== null && v !== undefined)
+        Object.entries(params).filter(
+          ([, v]) => v !== "" && v !== null && v !== undefined,
+        ),
       );
-      const response = await api.get('/donors', { params: cleanParams });
+      const response = await api.get("/donors", { params: cleanParams });
       return response.data;
     } catch (error) {
       throw new Error(getErrorMessage(error));
@@ -53,7 +57,7 @@ const donorService = {
    */
   createDonor: async (data) => {
     try {
-      const response = await api.post('/donors', data);
+      const response = await api.post("/donors", data);
       return response.data;
     } catch (error) {
       throw new Error(getErrorMessage(error));
