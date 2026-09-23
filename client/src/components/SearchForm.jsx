@@ -24,7 +24,7 @@ const SearchForm = ({ filters, onChange, onSearch, onReset, loading }) => {
               <input
                 id="search-name"
                 type="text"
-                placeholder="e.g. Muhammad Ali..."
+                placeholder="e.g. Muhammad Hanif..."
                 value={filters.name}
                 onChange={(e) => handleChange('name', e.target.value)}
                 className="w-full h-11 pl-9 pr-4 bg-surface-container-low rounded-lg text-on-surface font-inter text-[1rem] placeholder:text-on-surface-variant/60 focus:outline-none focus:bg-white focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all"
@@ -43,7 +43,7 @@ const SearchForm = ({ filters, onChange, onSearch, onReset, loading }) => {
               <input
                 id="search-father"
                 type="text"
-                placeholder="e.g. Abdul Rahman..."
+                placeholder="e.g. Ghulam Habib..."
                 value={filters.fatherName}
                 onChange={(e) => handleChange('fatherName', e.target.value)}
                 className="w-full h-11 pl-9 pr-4 bg-surface-container-low rounded-lg text-on-surface font-inter text-[1rem] placeholder:text-on-surface-variant/60 focus:outline-none focus:bg-white focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all"

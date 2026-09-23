@@ -76,7 +76,7 @@ const Home = () => {
           {/* Headline */}
           <h1 className="font-plus-jakarta font-bold text-[1.75rem] md:text-[3rem] text-on-surface tracking-tight max-w-3xl mb-4 leading-tight">
             Every Drop Counts. Connect Directly with{" "}
-            <span className="text-primary underline decoration-wavy decoration-error-container decoration-2">
+            <span className="text-primary decoration-error-container decoration-2">
               Voluntary Blood Donors
             </span>
             .
@@ -109,7 +109,7 @@ const Home = () => {
                   <input
                     id="city-input"
                     type="text"
-                    placeholder="e.g. Lahore, Karachi, Lakki Marwat…"
+                    placeholder="e.g. Lakki Marwat, Lahore, Karachi…"
                     value={cityInput}
                     onChange={(e) => setCityInput(e.target.value)}
                     className="w-full h-11 px-3.5 bg-white text-on-surface font-inter text-[1rem] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"

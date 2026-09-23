@@ -169,8 +169,8 @@ const RegisterDonor = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {[
-            ["name", "Name", "e.g. Muhammad Ali", "text", true],
-            ["fatherName", "Father's Name", "e.g. Abdul Rahman", "text", true],
+            ["name", "Name", "e.g. Muhammad Hanif", "text", true],
+            ["fatherName", "Father's Name", "e.g. Ghulam Habib", "text", true],
             ["phone", "Phone Number", "e.g. 03000000000", "tel", true],
             [
               "alternatePhone",
