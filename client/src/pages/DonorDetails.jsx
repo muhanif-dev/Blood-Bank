@@ -59,6 +59,8 @@ const DonorDetails = () => {
       value: donor.fatherName,
       icon: "family_restroom",
     },
+    { label: "Blood Group", value: donor.bloodGroup, icon: "bloodtype" },
+    { label: "Address", value: donor.address, icon: "location_on" },
     { label: "Program", value: donor.program, icon: "school" },
     { label: "Department", value: donor.department, icon: "menu_book" },
     { label: "Session", value: donor.session, icon: "calendar_month" },

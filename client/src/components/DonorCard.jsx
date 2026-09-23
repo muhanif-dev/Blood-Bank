@@ -10,7 +10,7 @@ const getInitials = (name = "") =>
     .toUpperCase();
 
 const DonorCard = ({ donor }) => {
-  const { _id, name, fatherName, program, department, session } = donor;
+  const { _id, name, fatherName, bloodGroup, department, session } = donor;
   const initials = getInitials(name);
 
   return (
@@ -33,7 +33,7 @@ const DonorCard = ({ donor }) => {
             </div>
           </div>
           <div className="px-3 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0 font-plus-jakarta font-extrabold text-[0.875rem]">
-            {program}
+            {bloodGroup}
           </div>
         </div>
 

@@ -29,6 +29,11 @@ const donorSchema = new mongoose.Schema(
       required: [true, "Session is required"],
       enum: ["2024-2028", "2025-2029", "2026-2030"],
     },
+    bloodGroup: {
+      type: String,
+      required: [true, "Blood group is required"],
+      enum: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+    },
     phone: {
       type: String,
       required: [true, "Phone number is required"],
@@ -43,6 +48,11 @@ const donorSchema = new mongoose.Schema(
         "Please enter a valid alternate phone number",
       ],
       default: "",
+    },
+    address: {
+      type: String,
+      required: [true, "Address is required"],
+      trim: true,
     },
   },
   {

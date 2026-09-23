@@ -85,6 +85,8 @@ const createDonor = async (req, res, next) => {
       fatherName,
       phone,
       alternatePhone,
+      bloodGroup,
+      address,
       program,
       department,
       session,
@@ -106,6 +108,14 @@ const createDonor = async (req, res, next) => {
         .status(400)
         .json({ success: false, message: "Phone number is required." });
     }
+    if (!bloodGroup)
+      return res
+        .status(400)
+        .json({ success: false, message: "Blood group is required." });
+    if (!address || !address.trim())
+      return res
+        .status(400)
+        .json({ success: false, message: "Address is required." });
 
     if (!program)
       return res
@@ -124,6 +134,8 @@ const createDonor = async (req, res, next) => {
       name: name.trim(),
       fatherName: fatherName.trim(),
       phone: phone.trim(),
+      bloodGroup,
+      address: address.trim(),
       program,
       department,
       session,
@@ -163,13 +175,11 @@ const updateDonor = async (req, res, next) => {
         .status(404)
         .json({ success: false, message: "Donor not found." });
     }
-    return res
-      .status(200)
-      .json({
-        success: true,
-        message: "Donor updated successfully.",
-        data: donor,
-      });
+    return res.status(200).json({
+      success: true,
+      message: "Donor updated successfully.",
+      data: donor,
+    });
   } catch (error) {
     if (error.name === "CastError") {
       return res

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import donorService from "../services/donorService";
 
 const PROGRAMS = ["BS", "MS", "PhD"];
+const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 const DEPARTMENTS = [
   "Computer Science",
   "English",
@@ -24,6 +25,8 @@ const INITIAL_FORM = {
   fatherName: "",
   phone: "",
   alternatePhone: "",
+  bloodGroup: "",
+  address: "",
   program: "",
   department: "",
   session: "",
@@ -61,6 +64,8 @@ const RegisterDonor = () => {
       !/^[0-9+\-\s()]{7,15}$/.test(form.alternatePhone.trim())
     )
       newErrors.alternatePhone = "Please enter a valid phone number.";
+    if (!form.bloodGroup) newErrors.bloodGroup = "Please select a blood group.";
+    if (!form.address.trim()) newErrors.address = "Address is required.";
     if (!form.program) newErrors.program = "Please select a program.";
     if (!form.department) newErrors.department = "Please select a department.";
     if (!form.session) newErrors.session = "Please select a session.";
@@ -199,6 +204,7 @@ const RegisterDonor = () => {
             ["program", "Program", PROGRAMS],
             ["department", "Department", DEPARTMENTS],
             ["session", "Session", SESSIONS],
+            ["bloodGroup", "Blood Group", BLOOD_GROUPS],
           ].map(([field, label, options]) => (
             <div key={field} className="flex flex-col gap-1.5">
               <label
@@ -232,6 +238,27 @@ const RegisterDonor = () => {
               )}
             </div>
           ))}
+          <div className="flex flex-col gap-1.5 md:col-span-2">
+            <label
+              htmlFor="address"
+              className="font-plus-jakarta text-[0.75rem] font-semibold text-on-surface tracking-wide"
+            >
+              Address <span className="text-primary">*</span>
+            </label>
+            <textarea
+              id="address"
+              rows="3"
+              placeholder="e.g. Street 4, Lakki Marwat"
+              value={form.address}
+              onChange={(event) => handleChange("address", event.target.value)}
+              className={`${inputClass("address")} h-auto py-3 resize-none`}
+            />
+            {errors.address && (
+              <p className="font-inter text-[0.75rem] text-error">
+                {errors.address}
+              </p>
+            )}
+          </div>
         </div>
         <div className="mt-6 bg-surface-container-low rounded-2xl p-5 border border-outline-variant/20">
           <div className="flex items-start gap-3">
