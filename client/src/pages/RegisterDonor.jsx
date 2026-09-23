@@ -14,9 +14,11 @@ const DEPARTMENTS = [
   "Mathematics",
   "Political Science",
   "Islamiyat",
+  "Urdu",
   "Sports Science",
-  "Health and Physical Education",
-  "BBA",
+  "Nursing",
+  "Allied Health Sciences",
+  "Management Sciences",
   "Veterinary",
 ];
 const SESSIONS = ["2024-2028", "2025-2029", "2026-2030"];
