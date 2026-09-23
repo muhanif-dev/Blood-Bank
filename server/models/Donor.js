@@ -1,14 +1,12 @@
-const mongoose = require('mongoose');
-
-const VALID_BLOOD_GROUPS = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+const mongoose = require("mongoose");
 
 const donorSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'Full name is required'],
+      required: [true, "Full name is required"],
       trim: true,
-      minlength: [2, 'Name must be at least 2 characters'],
+      minlength: [2, "Name must be at least 2 characters"],
     },
     fatherName: {
       type: String,
@@ -16,63 +14,48 @@ const donorSchema = new mongoose.Schema(
       trim: true,
       minlength: [2, "Father's name must be at least 2 characters"],
     },
-    bloodGroup: {
+    program: {
       type: String,
-      required: [true, 'Blood group is required'],
-      enum: {
-        values: VALID_BLOOD_GROUPS,
-        message: 'Invalid blood group. Must be one of: A+, A-, B+, B-, AB+, AB-, O+, O-',
-      },
+      required: [true, "Program is required"],
+      enum: ["BS", "MS", "PhD"],
     },
-    place: {
+    department: {
       type: String,
-      required: [true, 'City / Place is required'],
+      required: [true, "Department is required"],
       trim: true,
+    },
+    session: {
+      type: String,
+      required: [true, "Session is required"],
+      enum: ["2024-2028", "2025-2029", "2026-2030"],
     },
     phone: {
       type: String,
-      required: [true, 'Phone number is required'],
+      required: [true, "Phone number is required"],
       trim: true,
-      match: [/^[0-9+\-\s()]{7,15}$/, 'Please enter a valid phone number'],
+      match: [/^[0-9+\-\s()]{7,15}$/, "Please enter a valid phone number"],
     },
-    email: {
+    alternatePhone: {
       type: String,
       trim: true,
-      lowercase: true,
-      match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email address'],
-      default: '',
-    },
-    age: {
-      type: Number,
-      min: [16, 'Donor must be at least 16 years old'],
-      max: [65, 'Donor must be 65 years or younger'],
-    },
-    gender: {
-      type: String,
-      enum: ['Male', 'Female', 'Other', ''],
-      default: '',
-    },
-    address: {
-      type: String,
-      trim: true,
-      default: '',
-    },
-    lastDonationDate: {
-      type: Date,
-      default: null,
+      match: [
+        /^[0-9+\-\s()]{7,15}$/,
+        "Please enter a valid alternate phone number",
+      ],
+      default: "",
     },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // Indexes for fast search
 donorSchema.index({ bloodGroup: 1 });
-donorSchema.index({ place: 'text', name: 'text', fatherName: 'text' });
+donorSchema.index({ department: "text", name: "text", fatherName: "text" });
 donorSchema.index({ name: 1 });
-donorSchema.index({ place: 1 });
+donorSchema.index({ department: 1 });
 
-const Donor = mongoose.model('Donor', donorSchema);
+const Donor = mongoose.model("Donor", donorSchema);
 
 module.exports = Donor;
