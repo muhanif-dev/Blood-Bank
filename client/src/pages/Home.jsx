@@ -40,18 +40,21 @@ const Home = () => {
               Urgent
             </span>
             <p className="font-inter text-[0.875rem] font-semibold">
-              Critical Shortage Alert:{' '}
-              <span className="text-primary font-bold">O− &amp; B−</span> donors needed urgently.{' '}
+              Critical Shortage Alert:{" "}
+              <span className="text-primary font-bold">O− &amp; B−</span> donors
+              needed urgently.{" "}
               <span className="font-normal">Register now to save a life.</span>
             </p>
           </div>
         </div>
         <button
-          onClick={() => navigate('/register')}
+          onClick={() => navigate("/register")}
           className="inline-flex items-center gap-1.5 px-4 py-1 bg-primary text-white rounded-full text-[0.75rem] font-plus-jakarta font-semibold hover:bg-primary/90 transition-colors shadow-sm flex-shrink-0"
         >
           <span>Become a Donor</span>
-          <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+          <span className="material-symbols-outlined text-[16px]">
+            arrow_forward
+          </span>
         </button>
       </aside>
 
@@ -163,19 +166,21 @@ const Home = () => {
                 <div className="flex items-center gap-3 w-full sm:w-auto">
                   <button
                     type="submit"
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 h-11 px-6 bg-primary hover:bg-primary/90 text-white rounded-lg font-plus-jakarta font-semibold text-[0.875rem] transition-transform active:scale-95 shadow-md"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 h-11 px-4 sm:px-6 bg-primary hover:bg-primary/90 text-white rounded-lg font-plus-jakarta font-semibold text-xs sm:text-sm transition-transform active:scale-95 shadow-md"
                   >
-                    <span className="material-symbols-outlined text-[20px]">
+                    <span className="material-symbols-outlined text-[16px] sm:text-[20px]">
                       search
                     </span>
                     Find Donors Instantly
                   </button>
                   <button
                     type="button"
-                    onClick={() => navigate('/register')}
+                    onClick={() => navigate("/register")}
                     className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 h-11 px-4 bg-white hover:bg-surface-container text-on-surface font-plus-jakarta font-semibold text-[0.875rem] rounded-lg shadow-sm transition-colors border border-outline-variant/30"
                   >
-                    <span className="material-symbols-outlined text-[18px] text-primary">person_add</span>
+                    <span className="material-symbols-outlined text-[18px] text-primary">
+                      person_add
+                    </span>
                     Join Registry
                   </button>
                 </div>
@@ -352,10 +357,12 @@ const Home = () => {
             </p>
           </div>
           <button
-            onClick={() => navigate('/register')}
+            onClick={() => navigate("/register")}
             className="relative z-10 flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-xl font-plus-jakarta font-bold text-[0.875rem] hover:bg-surface-container-low transition-colors shadow-lg active:scale-95"
           >
-            <span className="material-symbols-outlined text-[20px]">person_add</span>
+            <span className="material-symbols-outlined text-[20px]">
+              person_add
+            </span>
             Register as a Donor
           </button>
         </div>
@@ -380,12 +387,36 @@ const Home = () => {
             {[
               { name: "Dr. Bilal Qureshi", role: "Director", featured: true },
               { name: "Mr. Abdullah Khan", role: "Mentor", featured: true },
-              { name: "Muhammad Hanif", role: "Team Member", qualification: "BSCS, 5th Semester" },
-              { name: "Muhammad Bilal", role: "Team Member", qualification: "BSCS, 5th Semester" },
-              { name: "Muhammad Rehan", role: "Team Member", qualification: "BSCS, 5th Semester" },
-              { name: "Muhammad Fawad", role: "Team Member", qualification: "BSCS, 5th Semester" },
-              { name: "Muhammad Tauheed", role: "Team Member", qualification: "BSCS, 5th Semester" },
-              { name: "Mujtaba", role: "Team Member", qualification: "BSCS, 5th Semester" },
+              {
+                name: "Muhammad Hanif",
+                role: "Team Member",
+                qualification: "BSCS, 5th Semester",
+              },
+              {
+                name: "Muhammad Bilal",
+                role: "Team Member",
+                qualification: "BSCS, 5th Semester",
+              },
+              {
+                name: "Muhammad Rehan",
+                role: "Team Member",
+                qualification: "BSCS, 5th Semester",
+              },
+              {
+                name: "Muhammad Fawad",
+                role: "Team Member",
+                qualification: "BSCS, 5th Semester",
+              },
+              {
+                name: "Muhammad Tauheed",
+                role: "Team Member",
+                qualification: "BSCS, 5th Semester",
+              },
+              {
+                name: "Mujtaba",
+                role: "Team Member",
+                qualification: "BSCS, 5th Semester",
+              },
             ].map(({ name, role, featured, qualification }) => (
               <div
                 key={name}
@@ -405,7 +436,7 @@ const Home = () => {
                     <h3 className="font-plus-jakarta font-bold text-[0.875rem] text-on-surface truncate">
                       {name}
                     </h3>
-                     {qualification && (
+                    {qualification && (
                       <p className="font-inter text-[0.75rem] text-on-surface-variant">
                         {qualification}
                       </p>
@@ -415,7 +446,6 @@ const Home = () => {
                     >
                       {role}
                     </p>
-                   
                   </div>
                 </div>
               </div>
